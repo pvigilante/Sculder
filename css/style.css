@@ -1,0 +1,31 @@
+body, table {
+	margin:0;
+	padding:0;
+	font: normal 21px/42px Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+table {
+	border-collapse:collapse;
+}
+td, th {
+	border:1px solid grey;
+	height:5em;
+}
+th button {
+	background:#FFBD2B;
+}
+button {
+	border:none;
+	display:block;
+	width:100%;
+	padding:2em;
+	font-size:1em;
+	height:5em;
+	background:#DFDFDF;
+}
+button[data-action=input]{
+	background:#F0F0F0;	
+}
+#result {
+	padding:0 2em;
+	text-align:right;
+}
