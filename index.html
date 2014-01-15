@@ -24,8 +24,6 @@
 			//udpate acceleration every 3 seconds
 			var options = {frequency: 3000};   
 			watchID =  navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-			
-			
 	   }
 	   //Stop watching the acceleration
 	   function stopWatch() {
@@ -36,6 +34,12 @@
 	   }
 	   //Get the current Acceleration data if successful
 	   function onSuccess(acceleration) {
+		   var element = document.getElementById('accelerometer');
+		   element.innerHTML = 
+		   		'Acceleration X: ' + acceleration.x + '<br>'+
+		   		'Acceleration Y: ' + acceleration.y + '<br>'+
+				'Acceleration Z: ' + acceleration.z + '<br>'+
+				'Timestamp: ' 		+ acceleration.timestamp + '<br>';
 		   var changes = {},
 		  		bound = 0.2;
 			if (previousReading.x !== null){
@@ -51,11 +55,7 @@
 				y: reading.y,
 				z: reading.z	
 			}
-		   var element = document.getElementById('accelerometer');
-		   element.innerHTML = 'Acceleration X: ' + acceleration.x + '<br>'+
-		   		'Acceleration Y: ' + acceleration.y + '<br>'+
-				'Acceleration Z: ' + acceleration.z + '<br>'+
-				'Timestamp: ' + acceleration.timestamp + '<br>';
+		   
 	   }
 	   //alert if there is an error
 	   function onError() {
@@ -69,6 +69,6 @@
     </head>
     <body>
         <h1>HelloWorld</h1>
-        <div id="accelerometer">Waiting for accelerometer...</div>
+        <div id="accelerometer">Waiting for accelerometer..</div>
     </body>
 </html>
