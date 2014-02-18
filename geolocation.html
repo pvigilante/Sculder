@@ -6,9 +6,7 @@
         <title>DAG Sculder</title>
         <link href="css/style.css" rel=stylesheet type="text/css">
         <script src="js/jquery.js"></script>
-        <script src="phonegap.js"></script>
-        <script src="js/script.js"></script>
-        
+        <script src="phonegap.js"></script>        
         <script>
 		var watchID = null;
 		document.addEventListener('deviceready', loaded, false);
@@ -16,7 +14,7 @@
 			watchID = navigator.geolocation.watchPosition(success, error, {frequency:3000});
 				
 		}
-		function success(posistion) {
+		function success(position) {
 			var element = document.getElementById('geolocation');	
 			element.innerHTML = 'Latitiude: ' + position.coords.latitude + '<br>' +
 								'Longitude: ' + position.coords.longitude + '<br>' +

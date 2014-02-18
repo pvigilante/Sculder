@@ -7,7 +7,6 @@
         <link href="css/style.css" rel=stylesheet type="text/css">
         <script src="js/jquery.js"></script>
         <script src="phonegap.js"></script>
-        <script src="js/script.js"></script>
         
         <script>
 		//The watch id references the currect 'watchAcceleration'
@@ -41,7 +40,7 @@
 				'Acceleration Z: ' + acceleration.z + '<br>'+
 				'Timestamp: ' 		+ acceleration.timestamp + '<br>';
 		   var changes = {},
-		  		bound = 0.2;
+		  		bound = 0.5;
 			if (previousReading.x !== null){
 				changes.x = Math.abs(previousReading.x, acceleration.x);
 				changes.y = Math.abs(previousReading.y, acceleration.y);
