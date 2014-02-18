@@ -24,7 +24,8 @@
 		}
 		function fingPhoto() {
 			pictureSource = navigator.camera.PictureSourceType.PHOTOLIBRARY;
-			navigator.camera.getPicture(getPhoto, onFail, {quality:80, allowEdit: true});	
+			destinationType = navigator.camera.DestinationType.DATA_URL;
+			navigator.camera.getPicture(getPhoto, onFail, {quality:80, destinationType:destinationType, sourceType:pictureSource, allowEdit: true});	
 		}
 		function capturePhoto() {
 			navigator.camera.getPicture(getPhoto, onFail, {quality:80, allowEdit: true});	

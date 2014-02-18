@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>DAG Sculder</title>
+        <link href="css/style.css" rel=stylesheet type="text/css">
+        <script src="js/jquery.js"></script>
+        <script src="phonegap.js"></script>
+        <script src="js/script.js"></script>
+        
+        <script>
+		var watchID = null;
+		document.addEventListener('deviceready', loaded, false);
+		function loaded(){
+			watchID = navigator.geolocation.watchPosition(success, error, {frequency:3000});
+				
+		}
+		function success(posistion) {
+			var element = document.getElementById('geolocation');	
+			element.innerHTML = 'Latitiude: ' + position.coords.latitude + '<br>' +
+								'Longitude: ' + position.coords.longitude + '<br>' +
+								'Altitude' + position.coords.altitude + '<br>' +
+								'Accuracy' + position.coords.accuracy + '<br>' +
+								'Altitude Accuracy' + position.coords.altitudeAccuracy + '<br>' +
+								'Heading' + position.coords.heading + '<br>' +
+								'Speed' + position.coords.speed + '<br>' +
+								'Timestamp' + new Date(position.timestamp) + '<hr>';
+		}
+		function error(error){
+			alert(error.message);	
+		}
+		
+        </script>
+    </head>
+    <body>
+        <h1>GeoLocation API</h1>
+        <div id="geolocation">Finding Geolocation...</div>
+    </body>
+</html>
