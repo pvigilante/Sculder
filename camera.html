@@ -20,10 +20,14 @@
 		function getPhoto(imageData) {
 			var smallImage = document.getElementById('smallIamge');
 			smallImage.style.display = 'block';
-			smallIamge.src = "data:image/jpeg;base64,"+imageData;
+			smallImage.src = "data:image/jpeg;base64,"+imageData;
+		}
+		function fingPhoto() {
+			pictureSource = navigator.camera.PictureSourceType.PHOTOLIBRARY;
+			navigator.camera.getPicture(getPhoto, onFail, {quality:80, allowEdit: true});	
 		}
 		function capturePhoto() {
-			navigator.camera.getPicture(getPhoto, onFail, {quality:50});	
+			navigator.camera.getPicture(getPhoto, onFail, {quality:80, allowEdit: true});	
 		}
 		function onFail(message) {
 			alert('Failed because: ' + message);	
@@ -33,7 +37,10 @@
     <body>
         <h1>Camera API</h1>
         <a href="index.html">Accelometer API</a><br>
-        <button onClick="capturePhoto();">Capture</button><br>
-        <img style="display:none; width:60px; height:60px;" id="smallImage" src="">
+        <button onClick="capturePhoto();">Capture</button>
+        <br>
+        <button onClick="findPhoto();">Find Photo</button>
+        <br>
+        <img style="display:none; width:200px; height:200px;" id="smallImage" src="">
     </body>
 </html>
