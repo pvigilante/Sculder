@@ -22,7 +22,7 @@
 	   //Start watching the acceleration
 	   function startWatch(){
 			//udpate acceleration every 3 seconds
-			var options = {frequency: 3000};   
+			var options = {frequency: 1000};   
 			watchID =  navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 	   }
 	   //Stop watching the acceleration
